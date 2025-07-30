@@ -1,0 +1,47 @@
+// VSCode Keybindings
+[
+  // Live Server: Go Online in editor
+  {
+    "key": "cmd+o",
+    "command": "extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  // Toggle Auxiliary Bar (secondary sidebar)
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  // Toggle Sidebar (primary sidebar)
+  {
+    "key": "cmd+h",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  // Emmet: Wrap with Abbreviation
+  {
+    "key": "shift+cmd+a",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  // Emmet: Remove Tag
+  {
+    "key": "cmd+k",
+    "command": "editor.emmet.action.removeTag"
+  },
+  // Toggle Terminal (when terminal is active)
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  // Close Explorer and focus editor (multi-command)
+  {
+    "key": "space e",
+    "command": "multiCommand.closeExplorerAndFocusEditor",
+    "when": "explorerViewletVisible && !inputFocus"
+  },
+  // Close Auxiliary Bar and focus editor (multi-command)
+  {
+    "key": "space a",
+    "command": "multiCommand.closeAuxBarAndFocusEditor",
+    "when": "auxiliaryBarVisible && !inputFocus"
+  }
+]

@@ -1,0 +1,169 @@
+{
+  // =====================
+  // Language & Formatting
+  // =====================
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.format.enable": true,
+
+  // =====================
+  // Theme & Appearance
+  // =====================
+  "workbench.colorTheme": "Tokyo Night Pro",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.statusBar.visible": false,
+//   "workbench.editor.showTabs": "none",
+  "workbench.colorCustomizations": {
+    "editorOverviewRuler.warningForeground": "#00000000",
+    "editorOverviewRuler.errorForeground": "#00000000"
+  },
+
+  // =====================
+  // Editor Behavior
+  // =====================
+  "window.zoomLevel": 2,
+  "window.restoreFullscreen": true,
+  "window.newWindowDimensions": "inherit",
+  "window.nativeFullScreen": true,
+  "editor.minimap.enabled": false,
+  "editor.minimap.autohide": true,
+  "editor.renderWhitespace": "all",
+  "editor.lineNumbers": "relative",
+  "editor.guides.indentation": false,
+  "editor.snippetSuggestions": "top",
+  "editor.detectIndentation": false,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.emptySelectionClipboard": false,
+  "editor.fontFamily": "CommitMono Nerd Font",
+  "editor.suggestFontSize": 12,
+  "editor.suggestLineHeight": 30,
+  "editor.stickyScroll.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderControlCharacters": false,
+  "editor.hover.delay": 1500,
+  "editor.hover.enabled": true,
+  "editor.matchBrackets": "never",
+  "editor.colorDecorators": false,
+  "editor.selectionHighlight": false,
+  "editor.overviewRulerBorder": false,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.occurrencesHighlight": "off",
+  "editor.lightbulb.enabled": "off",
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+
+  // =====================
+  // Terminal & File Settings
+  // =====================
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontFamily": "CommitMono Nerd Font",
+  "terminal.external.osxExec": "Warp.app",
+  "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+
+  // =====================
+  // Git & Source Control
+  // =====================
+  "gitlens.rebaseEditor.ordering": "asc",
+  "git.openRepositoryInParentFolders": "never",
+  "git.decorations.enabled": false,
+  "scm.diffDecorations": "none",
+
+  // =====================
+  // Breadcrumbs & Navigation
+  // =====================
+  "breadcrumbs.enabled": false,
+
+  // =====================
+  // Problems & Suggestions
+  // =====================
+  "problems.decorations.enabled": false,
+
+  // =====================
+  // Copilot & Extensions
+  // =====================
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  // =====================
+  // Spellcheck & Custom Dictionary
+  // =====================
+  "cSpell.userWords": ["Jarren"],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "addWords": true,
+      "scope": "user"
+    }
+  },
+
+  // =====================
+  // Neovim Integration
+  // =====================
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/jarrenbess/.config/nvim/init.lua",
+  "vscode-neovim.compositeKeys": {
+    "jk": {
+      "command": "vscode-neovim.escape"
+    }
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+
+  // =====================
+  // Custom CSS/JS Loader
+  // =====================
+  "vscode_custom_css.imports": [
+    "file:///Users/jarrenbess/custom-vscode/custom-vscode.css",
+    "file:///Users/jarrenbess/custom-vscode/custom-vscode.js"
+  ],
+
+  // =====================
+  // Multi Command (VSCode Macros)
+  // =====================
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.closeExplorerAndFocusEditor",
+      "sequence": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.closeSidebar"
+      ]
+    },
+    {
+      "command": "multiCommand.closeAuxBarAndFocusEditor",
+      "sequence": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.closeAuxiliaryBar"
+      ]
+    }
+  ],
+  "workbench.activityBar.location": "hidden"
+}
