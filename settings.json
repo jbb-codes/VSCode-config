@@ -18,7 +18,7 @@
   "workbench.colorTheme": "Tokyo Night Pro",
   "workbench.iconTheme": "bearded-icons",
   "workbench.statusBar.visible": false,
-//   "workbench.editor.showTabs": "none",
+  //   "workbench.editor.showTabs": "none",
   "workbench.colorCustomizations": {
     "editorOverviewRuler.warningForeground": "#00000000",
     "editorOverviewRuler.errorForeground": "#00000000"
@@ -163,6 +163,10 @@
         "workbench.action.focusActiveEditorGroup",
         "workbench.action.closeAuxiliaryBar"
       ]
+    },
+    {
+      "command": "multiCommand.openFileAndCloseExplorer",
+      "sequence": ["list.select", "workbench.action.closeSidebar"]
     }
   ],
   "workbench.activityBar.location": "hidden"

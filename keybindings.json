@@ -43,5 +43,22 @@
     "key": "space a",
     "command": "multiCommand.closeAuxBarAndFocusEditor",
     "when": "auxiliaryBarVisible && !inputFocus"
+  },
+  // Open file and close Explorer when Enter is pressed on a file
+  {
+    "key": "enter",
+    "command": "multiCommand.openFileAndCloseExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // Navigate in quick open when list has focus
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "inQuickOpen && listFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "inQuickOpen && listFocus"
   }
 ]
