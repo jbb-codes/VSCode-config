@@ -213,5 +213,6 @@
     }
   ],
   "workbench.activityBar.location": "hidden",
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "workbench.editor.centeredLayoutAutoResize": true
 }
