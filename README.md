@@ -28,14 +28,37 @@ cp ~/Library/Application\ Support/Code/User/keybindings.json ~/keybindings.json.
 ## Features
 
 This configuration includes customizations for:
-- Editor appearance and behavior
-- Custom keybindings for improved workflow
-- Language-specific settings
-- Extension configurations
+- **Editor appearance and behavior**
+  - Clean editor interface with disabled minimap and whitespace rendering
+  - Hidden overview ruler indicators for distraction-free coding
+- **Custom keybindings for improved workflow**
+  - Enhanced terminal toggle (`cmd+j`) that works when terminal is focused
+  - File explorer navigation with `j/k` keys and Enter to open files
+  - Quick split functionality in Explorer (`shift+\` for vertical, `-` for horizontal)
+  - Improved quick open navigation with `j/k` for up/down movement
+- **Extension configurations**
+  - Optimized vscode-neovim settings with disabled ctrl key handling
+  - MultiCommand extension setup for advanced file operations
+- **Terminal and navigation enhancements**
+  - Streamlined file management workflow
+  - Keyboard-centric navigation patterns
+
+## Recent Updates
+
+### Latest Changes (July 2025)
+- Enhanced terminal toggle keybinding to work when terminal is focused
+- Added file split keybindings in Explorer for quick window management
+- Improved navigation keybindings for quick open functionality
+- Cleaned up editor interface by hiding visual indicators in overview ruler
+- Updated vscode-neovim extension settings for better performance
+- Added new multiCommand configurations for advanced file operations
 
 ## Compatibility
 
 Tested with Visual Studio Code version 1.x and later.
+Requires the following extensions for full functionality:
+- vscode-neovim
+- multi-command
 
 ## Contributing
 
