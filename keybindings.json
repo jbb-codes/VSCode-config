@@ -26,11 +26,11 @@
     "key": "cmd+k",
     "command": "editor.emmet.action.removeTag"
   },
-  // Toggle Terminal (when terminal is active)
+  // Toggle Terminal (works both when terminal is active or focused)
   {
     "key": "cmd+j",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
+    "when": "terminal.active || terminalFocus"
   },
   // Close Explorer and focus editor (multi-command)
   {
@@ -50,15 +50,40 @@
     "command": "multiCommand.openFileAndCloseExplorer",
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
-  // Navigate in quick open when list has focus
+  // Open file in vertical split when | is pressed on a file in Explorer
+  {
+    "key": "shift+\\",
+    "command": "multiCommand.openFileInVerticalSplit",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // Open file in horizontal split when - is pressed on a file in Explorer
+  {
+    "key": "-",
+    "command": "multiCommand.openFileInHorizontalSplit",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // Navigate DOWN in explorer file list when j is pressed
   {
     "key": "j",
     "command": "list.focusDown",
     "when": "inQuickOpen && listFocus"
   },
+  // Navigate UP in explorer file list when k is pressed
   {
     "key": "k",
     "command": "list.focusUp",
     "when": "inQuickOpen && listFocus"
+  },
+  // Move focus UP to Open Editors section when space+k is pressed in Explorer file tree
+  {
+    "key": "space k",
+    "command": "workbench.files.action.focusOpenEditorsView",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // Move focus DOWN to project files/file tree when space+j is pressed in Explorer
+  {
+    "key": "space j",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "explorerViewletVisible && !inputFocus"
   }
 ]

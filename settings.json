@@ -21,7 +21,16 @@
   //   "workbench.editor.showTabs": "none",
   "workbench.colorCustomizations": {
     "editorOverviewRuler.warningForeground": "#00000000",
-    "editorOverviewRuler.errorForeground": "#00000000"
+    "editorOverviewRuler.errorForeground": "#00000000",
+    "editorOverviewRuler.infoForeground": "#00000000",
+    "editorOverviewRuler.findMatchForeground": "#00000000",
+    "editorOverviewRuler.selectionHighlightForeground": "#00000000",
+    "editorOverviewRuler.wordHighlightForeground": "#00000000",
+    "editorOverviewRuler.wordHighlightStrongForeground": "#00000000",
+    "editorOverviewRuler.modifiedForeground": "#00000000",
+    "editorOverviewRuler.addedForeground": "#00000000",
+    "editorOverviewRuler.deletedForeground": "#00000000",
+    "editorOverviewRuler.bracketMatchForeground": "#00000000"
   },
 
   // =====================
@@ -31,9 +40,8 @@
   "window.restoreFullscreen": true,
   "window.newWindowDimensions": "inherit",
   "window.nativeFullScreen": true,
-  "editor.minimap.enabled": false,
   "editor.minimap.autohide": true,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.lineNumbers": "relative",
   "editor.guides.indentation": false,
   "editor.snippetSuggestions": "top",
@@ -129,6 +137,9 @@
   // =====================
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/jarrenbess/.config/nvim/init.lua",
+  "vscode-neovim.ctrlKeysForInsertMode": [],
+  "vscode-neovim.ctrlKeysForNormalMode": [],
+  "vscode-neovim.logOutputToConsole": false,
   "vscode-neovim.compositeKeys": {
     "jk": {
       "command": "vscode-neovim.escape"
@@ -167,7 +178,40 @@
     {
       "command": "multiCommand.openFileAndCloseExplorer",
       "sequence": ["list.select", "workbench.action.closeSidebar"]
+    },
+    {
+      "command": "multiCommand.openFileInVerticalSplit",
+      "sequence": ["explorer.openToSide", "workbench.action.closeSidebar"]
+    },
+    {
+      "command": "multiCommand.openFileInHorizontalSplit",
+      "sequence": [
+        "list.select",
+        "workbench.action.splitEditorDown",
+        "workbench.action.closeSidebar",
+        "workbench.action.focusPreviousGroup",
+        "workbench.action.closeActiveEditor",
+        "workbench.action.focusNextGroup",
+        "multiCommand.centerCursor"
+      ]
+    },
+    {
+      "command": "multiCommand.centerCursor",
+      "sequence": [
+        {
+          "command": "vscode-neovim.send",
+          "args": "zz"
+        }
+      ]
+    },
+    {
+      "command": "multiCommand.closeTerminalAndFocusEditor",
+      "sequence": [
+        "workbench.action.terminal.toggleTerminal",
+        "workbench.action.focusActiveEditorGroup"
+      ]
     }
   ],
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "editor.minimap.enabled": false
 }
