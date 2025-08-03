@@ -17,6 +17,16 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 ├── vscode-extensions.md       # Recommended extensions list
 ```
 
+### Backup Your Current Settings
+
+Before applying these settings, make sure to backup your current VS Code configuration:
+
+```bash
+# macOS
+cp ~/Library/Application\ Support/Code/User/settings.json ~/settings.json.backup
+cp ~/Library/Application\ Support/Code/User/keybindings.json ~/keybindings.json.backup
+```
+
 ## 🚀 Key Features
 
 ### How vscode-neovim-keymaps.lua Works
@@ -35,50 +45,7 @@ The configuration provides comprehensive LazyVim-inspired keybindings:
 
 - **Leader Key**: `Space` - Primary command prefix
 - **Window Navigation**: `<leader>h/j/k/l` - Move between editor groups
-- **Buffer Navigation**: `pb`/`nb` - Previous/next buffer, `H`/`L` - First/last buffer
 - **Quick Access**: `<leader>p` - Quick Open, `<leader>e` - File Explorer
-
-#### File Operations
-
-```lua
--- Quick file search (fuzzy finder)
-keymap("n", "<leader>ff", "<cmd>lua require('vscode').action('extension.fuzzySearch')<CR>")
-
--- Live grep in workspace
-keymap("n", "<leader>fg", "<cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>")
-
--- File management
-keymap("n", "<leader>fn", "<cmd>lua require('vscode').action('explorer.newFile')<CR>")
-```
-
-#### Buffer Management
-
-```lua
--- Close buffers
-keymap("n", "<leader>bd", "<cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>")
-keymap("n", "<leader>bo", "<cmd>lua require('vscode').action('workbench.action.closeOtherEditors')<CR>")
-
--- Navigate by position
-keymap("n", "<leader>1", "<cmd>lua require('vscode').action('workbench.action.openEditorAtIndex1')<CR>")
-```
-
-#### Git Integration
-
-```lua
--- Git operations
-keymap("n", "<leader>gg", "<cmd>lua require('vscode').action('workbench.view.scm')<CR>")
-keymap("n", "<leader>gb", "<cmd>lua require('vscode').action('gitlens.toggleFileBlame')<CR>")
-keymap("n", "<leader>gd", "<cmd>lua require('vscode').action('git.openChange')<CR>")
-```
-
-#### Code Actions
-
-```lua
--- LSP-like functionality
-keymap("n", "K", "<cmd>lua require('vscode').action('editor.action.showHover')<CR>")
-keymap({"n", "v"}, "<leader>ca", "<cmd>lua require('vscode').action('editor.action.quickFix')<CR>")
-keymap("n", "<leader>cf", "<cmd>lua require('vscode').action('editor.action.formatDocument')<CR>")
-```
 
 ### Keybinding Conflict Resolution
 
@@ -229,73 +196,6 @@ Configure Neovim paths according to your OS in `settings.json`:
   }
   ```
 
-## 📋 Complete Keybinding Reference
-
-### File & Navigation
-
-| Keybinding   | Action            | VSCode Command                 |
-| ------------ | ----------------- | ------------------------------ |
-| `<leader>p`  | Quick Open        | `workbench.action.quickOpen`   |
-| `<leader>ff` | Fuzzy file search | `extension.fuzzySearch`        |
-| `<leader>fg` | Live grep         | `workbench.action.findInFiles` |
-| `<leader>e`  | Toggle Explorer   | `workbench.view.explorer`      |
-| `<leader>fn` | New file          | `explorer.newFile`             |
-| `<leader>fd` | New folder        | `explorer.newFolder`           |
-| `<leader>fr` | Reveal in OS      | `revealFileInOS`               |
-| `<leader>fc` | Copy file path    | `copyFilePath`                 |
-
-### Buffer Management
-
-| Keybinding    | Action               | VSCode Command                        |
-| ------------- | -------------------- | ------------------------------------- |
-| `<leader>bd`  | Close buffer         | `workbench.action.closeActiveEditor`  |
-| `<leader>bo`  | Close others         | `workbench.action.closeOtherEditors`  |
-| `<leader>bD`  | Close all            | `workbench.action.closeAllEditors`    |
-| `<leader>bp`  | Pin buffer           | `workbench.action.pinEditor`          |
-| `<leader>bu`  | Reopen closed        | `workbench.action.reopenClosedEditor` |
-| `pb` / `nb`   | Previous/Next buffer | `workbench.action.previousEditor`     |
-| `H` / `L`     | First/Last buffer    | `workbench.action.firstEditorInGroup` |
-| `<leader>1-9` | Go to buffer N       | `workbench.action.openEditorAtIndexN` |
-
-### Window Management
-
-| Keybinding        | Action           | VSCode Command                                |
-| ----------------- | ---------------- | --------------------------------------------- |
-| `<leader>h/j/k/l` | Navigate groups  | `workbench.action.navigateLeft/Down/Up/Right` |
-| `<leader>/`       | Split vertical   | `workbench.action.splitEditor`                |
-| `<leader>-`       | Split horizontal | `workbench.action.splitEditorDown`            |
-| `<leader>wd`      | Close split      | `workbench.action.closeActiveEditor`          |
-| `<leader>ww`      | Switch splits    | `workbench.action.navigateEditorGroups`       |
-
-### Git & Version Control
-
-| Keybinding   | Action         | VSCode Command                       |
-| ------------ | -------------- | ------------------------------------ |
-| `<leader>gg` | Source control | `workbench.view.scm`                 |
-| `<leader>gb` | Toggle blame   | `gitlens.toggleFileBlame`            |
-| `<leader>gd` | Git diff       | `git.openChange`                     |
-| `]h` / `[h`  | Next/Prev hunk | `workbench.action.editor.nextChange` |
-
-### Code Actions
-
-| Keybinding   | Action          | VSCode Command                         |
-| ------------ | --------------- | -------------------------------------- |
-| `K`          | Show hover      | `editor.action.showHover`              |
-| `<leader>ca` | Code actions    | `editor.action.quickFix`               |
-| `<leader>cf` | Format document | `editor.action.formatDocument`         |
-| `<leader>sr` | Search replace  | `editor.action.startFindReplaceAction` |
-| `<leader>sR` | Global replace  | `workbench.action.replaceInFiles`      |
-
-### Utility
-
-| Keybinding   | Action          | VSCode Command                            |
-| ------------ | --------------- | ----------------------------------------- |
-| `<leader>cp` | Command palette | `workbench.action.showCommands`           |
-| `<leader>z`  | Zen mode        | `workbench.action.toggleZenMode`          |
-| `<leader>cc` | Copilot chat    | `workbench.panel.chat.view.copilot.focus` |
-| `<leader>w`  | Save file       | `workbench.action.files.save`             |
-| `<leader>W`  | Save all        | `workbench.action.files.saveAll`          |
-
 ## 🔧 Customization
 
 ### Adding Custom Keybindings
@@ -352,19 +252,6 @@ If the space key doesn't work as leader in explorer:
 - Disable unnecessary VSCode extensions
 - Reduce Neovim plugins when using in VSCode
 - Check VSCode's performance monitor (`Help` → `Process Explorer`)
-
-### Debug Mode
-
-Enable detailed logging in `settings.json`:
-
-```json
-{
-  "vscode-neovim.logOutputToConsole": true,
-  "vscode-neovim.logLevel": "debug"
-}
-```
-
-Then check the Output panel (⌥⌘U on macOS) and select "Neovim" from the dropdown.
 
 ### Verifying Setup
 
