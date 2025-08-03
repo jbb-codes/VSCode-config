@@ -10,12 +10,83 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 
 ```
 .
-├── README.md                  # Documentation
-├── settings.json              # VSCode user settings
-├── keybindings.json           # Keybindings configuration
-├── vscode-neovim-keymaps.lua  # Neovim keymaps for VSCode
-├── vscode-extensions.md       # Recommended extensions list
+├── README.md                  # Complete setup documentation
+├── settings.json              # VSCode user settings and configurations  
+├── keybindings.json           # Custom keybindings for VSCode-Neovim integration
+├── vscode-neovim-keymaps.lua  # Neovim keymaps optimized for VSCode environment
+├── vscode-extensions.md       # Curated list of recommended VSCode extensions
+└── custom-vscode/             # VSCode UI customizations
+    ├── custom-vscode.css      # Custom CSS for VSCode interface styling
+    └── custom-vscode.js       # Custom JavaScript for VSCode functionality
 ```
+
+## 📋 File Descriptions
+
+### Core Configuration Files
+
+#### `settings.json`
+**Purpose**: VSCode user settings that configure the editor behavior, appearance, and extension-specific settings.
+
+**Key configurations**:
+- Neovim executable paths for different operating systems
+- VSCode-Neovim extension settings and initialization paths
+- Editor preferences (font, theme, formatting)
+- Language-specific settings and formatters
+- Git integration and terminal configurations
+
+#### `keybindings.json`
+**Purpose**: Custom keybinding mappings that resolve conflicts between VSCode defaults and Neovim modal editing.
+
+**Key features**:
+- Space-based leader key implementation
+- Explorer navigation that works with Space leader
+- Multi-command sequences for complex workflows
+- Disabled conflicting VSCode default shortcuts
+- Modal editing support across different VSCode contexts
+
+#### `vscode-neovim-keymaps.lua`
+**Purpose**: Lua configuration that bridges Neovim keybindings with VSCode commands through the vscode-neovim extension.
+
+**Key functionality**:
+- LazyVim-inspired keybinding mappings
+- VSCode command integration via `require('vscode').action()`
+- Environment detection (`vim.g.vscode`) for VSCode-specific behavior
+- Window/pane navigation and management
+- File operations and quick access commands
+
+#### `vscode-extensions.md`
+**Purpose**: Comprehensive list of recommended VSCode extensions with installation commands and usage notes.
+
+**Contents**:
+- Essential extensions for Neovim integration
+- Development productivity tools
+- Language-specific extensions
+- UI/UX enhancement extensions
+- Installation scripts for batch setup
+
+### UI Customization Files
+
+#### `custom-vscode/custom-vscode.css`
+**Purpose**: Custom CSS styles for modifying VSCode's visual appearance beyond what's available in settings.
+
+**Typical customizations**:
+- Color scheme overrides and theme enhancements
+- Font adjustments and typography improvements
+- Interface element spacing and sizing modifications
+- Custom animations and visual transitions
+- UI element visibility and layout changes
+
+#### `custom-vscode/custom-vscode.js`
+**Purpose**: Custom JavaScript for extending VSCode functionality and adding interactive behaviors.
+
+**Common use cases**:
+- Custom commands and keyboard shortcuts
+- Enhanced UI interactions and behaviors
+- Automated workflows and productivity macros
+- Integration with external tools and services
+- Performance optimizations and tweaks
+
+**Note**: CSS and JS customizations require extensions like "Custom CSS and JS Loader" to be applied to VSCode.
 
 ### Backup Your Current Settings
 
@@ -122,10 +193,6 @@ scoop install neovim
 
 1. **Install the `vscode-neovim` extension:**
 
-   ```bash
-   code --install-extension asvetliakov.vscode-neovim
-   ```
-
 2. **Clone this Repository:**
 
    ```bash
@@ -134,20 +201,6 @@ scoop install neovim
    ```
 
 3. **Configure VSCode Settings:**
-
-   - **macOS/Linux:**
-
-     ```bash
-     cp settings.json "$HOME/.config/Code/User/settings.json"
-     cp keybindings.json "$HOME/.config/Code/User/keybindings.json"
-     ```
-
-   - **Windows:**
-
-     ```powershell
-     Copy-Item settings.json "$env:APPDATA\Code\User\settings.json"
-     Copy-Item keybindings.json "$env:APPDATA\Code\User\keybindings.json"
-     ```
 
 4. **Integrate with Neovim Configuration:**
 
@@ -247,12 +300,6 @@ If the space key doesn't work as leader in explorer:
 - Restart VSCode after updating keybindings
 - Check for conflicting default VSCode keybindings that override space key
 
-**Performance issues:**
-
-- Disable unnecessary VSCode extensions
-- Reduce Neovim plugins when using in VSCode
-- Check VSCode's performance monitor (`Help` → `Process Explorer`)
-
 ### Verifying Setup
 
 To verify everything is working:
@@ -336,4 +383,4 @@ This setup is licensed under the MIT License. Feel free to use, modify, and dist
 
 ---
 
-_Enjoy the power of Neovim within the comfort of VSCode! 🚀_
+Enjoy the power of Neovim within the comfort of VSCode! 🚀
