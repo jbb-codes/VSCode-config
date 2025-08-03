@@ -69,40 +69,6 @@ keymap("n", "<leader>W", "<cmd>lua require('vscode').action('workbench.action.fi
 -- <leader>cc : Focus the Copilot Chat panel
 keymap("n", "<leader>cc", "<cmd>lua require('vscode').action('workbench.panel.chat.view.copilot.focus')<CR>")
 
--- Buffer/Tab Navigation
--- <leader>bd : Close current buffer/tab
-keymap("n", "<leader>bd", "<cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>")
-
--- <leader>bo : Close all other buffers/tabs except current
-keymap("n", "<leader>bo", "<cmd>lua require('vscode').action('workbench.action.closeOtherEditors')<CR>")
-
--- <leader>bD : Close all buffers/tabs
-keymap("n", "<leader>bD", "<cmd>lua require('vscode').action('workbench.action.closeAllEditors')<CR>")
-
--- <leader>bl : Close all buffers/tabs to the left
-keymap("n", "<leader>bl", "<cmd>lua require('vscode').action('workbench.action.closeEditorsToTheLeft')<CR>")
-
--- <leader>br : Close all buffers/tabs to the right
-keymap("n", "<leader>br", "<cmd>lua require('vscode').action('workbench.action.closeEditorsToTheRight')<CR>")
-
--- <leader>bp : Pin/unpin current buffer/tab
-keymap("n", "<leader>bp", "<cmd>lua require('vscode').action('workbench.action.pinEditor')<CR>")
-
--- <leader>bu : Reopen recently closed buffer/tab
-keymap("n", "<leader>bu", "<cmd>lua require('vscode').action('workbench.action.reopenClosedEditor')<CR>")
-
--- [b : Previous buffer/tab
-keymap("n", "pb", "<cmd>lua require('vscode').action('workbench.action.previousEditor')<CR>")
-
--- ]b : Next buffer/tab
-keymap("n", "nb", "<cmd>lua require('vscode').action('workbench.action.nextEditor')<CR>")
-
--- H : Move to first buffer/tab
-keymap("n", "H", "<cmd>lua require('vscode').action('workbench.action.firstEditorInGroup')<CR>")
-
--- L : Move to last buffer/tab
-keymap("n", "L", "<cmd>lua require('vscode').action('workbench.action.lastEditorInGroup')<CR>")
-
 -- <leader>1-9 : Go to specific buffer/tab by position
 keymap("n", "<leader>1", "<cmd>lua require('vscode').action('workbench.action.openEditorAtIndex1')<CR>")
 keymap("n", "<leader>2", "<cmd>lua require('vscode').action('workbench.action.openEditorAtIndex2')<CR>")
