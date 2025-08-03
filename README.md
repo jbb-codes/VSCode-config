@@ -11,7 +11,7 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 ```
 .
 ├── README.md                  # Complete setup documentation
-├── settings.json              # VSCode user settings and configurations  
+├── settings.json              # VSCode user settings and configurations
 ├── keybindings.json           # Custom keybindings for VSCode-Neovim integration
 ├── vscode-neovim-keymaps.lua  # Neovim keymaps optimized for VSCode environment
 ├── vscode-extensions.md       # Curated list of recommended VSCode extensions
@@ -25,9 +25,11 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 ### Core Configuration Files
 
 #### `settings.json`
+
 **Purpose**: VSCode user settings that configure the editor behavior, appearance, and extension-specific settings.
 
 **Key configurations**:
+
 - Neovim executable paths for different operating systems
 - VSCode-Neovim extension settings and initialization paths
 - Editor preferences (font, theme, formatting)
@@ -35,9 +37,11 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 - Git integration and terminal configurations
 
 #### `keybindings.json`
+
 **Purpose**: Custom keybinding mappings that resolve conflicts between VSCode defaults and Neovim modal editing.
 
 **Key features**:
+
 - Space-based leader key implementation
 - Explorer navigation that works with Space leader
 - Multi-command sequences for complex workflows
@@ -45,9 +49,11 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 - Modal editing support across different VSCode contexts
 
 #### `vscode-neovim-keymaps.lua`
+
 **Purpose**: Lua configuration that bridges Neovim keybindings with VSCode commands through the vscode-neovim extension.
 
 **Key functionality**:
+
 - LazyVim-inspired keybinding mappings
 - VSCode command integration via `require('vscode').action()`
 - Environment detection (`vim.g.vscode`) for VSCode-specific behavior
@@ -55,9 +61,11 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 - File operations and quick access commands
 
 #### `vscode-extensions.md`
+
 **Purpose**: Comprehensive list of recommended VSCode extensions with installation commands and usage notes.
 
 **Contents**:
+
 - Essential extensions for Neovim integration
 - Development productivity tools
 - Language-specific extensions
@@ -67,9 +75,11 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 ### UI Customization Files
 
 #### `custom-vscode/custom-vscode.css`
+
 **Purpose**: Custom CSS styles for modifying VSCode's visual appearance beyond what's available in settings.
 
 **Typical customizations**:
+
 - Color scheme overrides and theme enhancements
 - Font adjustments and typography improvements
 - Interface element spacing and sizing modifications
@@ -77,16 +87,18 @@ This repository enhances Visual Studio Code with Neovim's powerful modal editing
 - UI element visibility and layout changes
 
 #### `custom-vscode/custom-vscode.js`
+
 **Purpose**: Custom JavaScript for extending VSCode functionality and adding interactive behaviors.
 
 **Common use cases**:
+
 - Custom commands and keyboard shortcuts
 - Enhanced UI interactions and behaviors
 - Automated workflows and productivity macros
 - Integration with external tools and services
 - Performance optimizations and tweaks
 
-**Note**: CSS and JS customizations require extensions like "Custom CSS and JS Loader" to be applied to VSCode.
+**Note**: CSS and JS customizations require extensions like "Custom CSS and JS Loader" to be applied to VSCode and the file path will need to match in `settings.json`.
 
 ### Backup Your Current Settings
 
