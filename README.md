@@ -2,6 +2,12 @@
 
 LazyVim-inspired Neovim keybindings for VSCode using the `vscode-neovim` extension.
 
+## 🎬 Demo
+
+See the configuration in action:
+
+![VSCode Neovim Configuration Demo](vscode-config-demo.mp4)
+
 ## ⚠️ Backup Your Settings First
 
 Before installing, backup your current VSCode configuration:
@@ -36,11 +42,6 @@ copy "%APPDATA%\Code\User\keybindings.json" "%USERPROFILE%\vscode-keybindings.ba
 - **Conflict Resolution**: Fixes Space key conflicts in VSCode Explorer
 - **Full Modal Editing**: All Vim motions and text objects work in VSCode
 
-## Demo
-
-See the configuration in action:
-
-![VSCode Neovim Configuration Demo](vscode-config-demo.mp4)
 
 ## 🛠 Installation & Setup
 
