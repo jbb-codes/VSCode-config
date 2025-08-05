@@ -137,9 +137,12 @@
   // =====================
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/jarrenbess/.config/nvim/init.lua",
-  "vscode-neovim.ctrlKeysForInsertMode": [],
-  "vscode-neovim.ctrlKeysForNormalMode": [],
-  "vscode-neovim.logOutputToConsole": false,
+  //   "vscode-neovim.ctrlKeysForInsertMode": [],
+  //   "vscode-neovim.ctrlKeysForNormalMode": [],
+  //   "vscode-neovim.logOutputToConsole": false,
+  "vscode-neovim.mouseSelectionStartVisualMode": false,
+  //   "vscode-neovim.useCtrlKeysForInsertMode": false,
+  //   "vscode-neovim.useCtrlKeysForNormalMode": false,
   "vscode-neovim.compositeKeys": {
     "jk": {
       "command": "vscode-neovim.escape"
@@ -187,8 +190,8 @@
       "command": "multiCommand.openFileInHorizontalSplit",
       "sequence": [
         "list.select",
-        "workbench.action.splitEditorDown",
         "workbench.action.closeSidebar",
+        "workbench.action.splitEditorDown",
         "workbench.action.focusPreviousGroup",
         "workbench.action.closeActiveEditor",
         "workbench.action.focusNextGroup",
