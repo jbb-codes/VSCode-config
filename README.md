@@ -26,6 +26,10 @@ copy "%APPDATA%\Code\User\settings.json" "%USERPROFILE%\vscode-settings.backup.j
 copy "%APPDATA%\Code\User\keybindings.json" "%USERPROFILE%\vscode-keybindings.backup.json"
 ```
 
+## 🔗 Companion Repository
+
+For additional features and enhancements to this VSCode Neovim setup, check out: **[Neovim Configuration](https://github.com/jbb-codes/neovim-config)**
+
 ## 📂 What's Included
 
 - `settings.json` - VSCode settings with Neovim paths and configurations
