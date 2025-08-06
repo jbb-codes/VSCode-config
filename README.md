@@ -34,7 +34,6 @@ For additional features and enhancements to this VSCode Neovim setup, check out:
 
 - `settings.json` - VSCode settings with Neovim paths and configurations
 - `keybindings.json` - Custom keybindings that resolve Space key conflicts
-- `vscode-neovim-keymaps.lua` - Neovim keymap configuration for VSCode
 - `vscode-extensions.md` - Recommended extensions list
 - `custom-vscode/` - Optional CSS/JS customizations
 
@@ -49,52 +48,25 @@ For additional features and enhancements to this VSCode Neovim setup, check out:
 
 ## 🛠 Installation & Setup
 
-### 1. Install Neovim
-
-```bash
-# macOS
-brew install neovim
-
-# Linux (Ubuntu/Debian)
-sudo apt install neovim
-
-# Windows
-choco install neovim
-```
-
-### 2. Install VSCode Extension
+### 1. Install VSCode Extension
 
 ```bash
 code --install-extension asvetliakov.vscode-neovim
 code --install-extension ryuta46.multi-command
 ```
 
-### 3. Clone and Apply Configuration
+### 2. Clone and Apply Configuration
 
 ```bash
 git clone https://github.com/yourusername/vscode-settings.git
 cd vscode-settings
-
-# Copy Neovim config
-mkdir -p ~/.config/nvim
-cp vscode-neovim-keymaps.lua ~/.config/nvim/
 
 # Copy VSCode settings (backup first!)
 cp settings.json "~/Library/Application Support/Code/User/"  # macOS
 cp keybindings.json "~/Library/Application Support/Code/User/"  # macOS
 ```
 
-### 4. Update Neovim init.lua
-
-Add to your `~/.config/nvim/init.lua`:
-
-```lua
-if vim.g.vscode then
-  require('vscode-neovim-keymaps')
-end
-```
-
-### 5. Configure Neovim Path (if needed)
+### 3. Configure Neovim Path (if needed)
 
 Update paths in VSCode settings if Neovim isn't found automatically:
 
@@ -125,18 +97,6 @@ VSCode's Explorer uses `Space` for file selection, which conflicts with our lead
 **Solution:** You may need to remove any default 'space' keybindings that conflict with the configuration.
 
 ## 🔧 Customization
-
-### Adding Custom Keybindings
-
-Add your custom keybindings to `vscode-neovim-keymaps.lua`:
-
-```lua
--- Custom keybinding example
-keymap("n", "<leader>custom", "<cmd>lua require('vscode').action('your.custom.command')<CR>")
-
--- Multi-mode keybinding
-keymap({"n", "v"}, "<leader>multi", "<cmd>lua require('vscode').action('editor.action.example')<CR>")
-```
 
 ### Finding VSCode Commands
 
@@ -196,25 +156,6 @@ code --install-extension tatosjb.fuzzy-search
 - [LazyVim](https://www.lazyvim.org/) - Inspiration for keybinding patterns
 - [Neovim Documentation](https://neovim.io/doc/) - Complete Neovim reference
 - [VSCode Keybinding Reference](https://code.visualstudio.com/docs/getstarted/keybindings) - VSCode keybinding documentation
-
-### Integration with Existing Neovim Config
-
-If you have an existing Neovim configuration, you can integrate this setup by:
-
-```lua
--- In your ~/.config/nvim/init.lua
-if vim.g.vscode then
-  -- VSCode Neovim specific settings
-  require('vscode-neovim-keymaps')
-
-  -- Disable plugins that don't work well in VSCode
-  vim.g.loaded_netrw = 1
-  vim.g.loaded_netrwPlugin = 1
-else
-  -- Your normal Neovim configuration
-  require('your-normal-config')
-end
-```
 
 ## 🤝 Contributing
 
