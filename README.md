@@ -116,8 +116,8 @@ To discover VSCode command IDs:
 
 **Keybindings not working:**
 - Check `vscode-neovim` extension is enabled
-- Ensure `vscode-neovim-keymaps.lua` is loaded in `init.lua`
 - Check VSCode Output panel for Neovim logs
+- Verify Neovim configuration is properly set up (see companion repository)
 
 **Space key conflicts:**
 - Ensure `keybindings.json` is copied correctly
