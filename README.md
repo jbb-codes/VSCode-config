@@ -51,7 +51,7 @@ copy "%APPDATA%\Code\User\keybindings.json" "%USERPROFILE%\vscode-keybindings.ba
 # macOS
 brew install neovim
 
-# Linux (Ubuntu/Debian) 
+# Linux (Ubuntu/Debian)
 sudo apt install neovim
 
 # Windows
@@ -98,7 +98,7 @@ Update paths in VSCode settings if Neovim isn't found automatically:
 // macOS (Homebrew)
 "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim"
 
-// Linux  
+// Linux
 "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
 
 // Windows
@@ -159,6 +159,11 @@ To discover VSCode command IDs:
 - Ensure `keybindings.json` is copied correctly
 - Restart VSCode after updating keybindings
 - Remove conflicting VSCode default keybindings
+
+**Horizontal split issues:**
+- Horizontal splits may not work consistently due to VSCode API limitations
+- VSCode lacks an explicit command ID for horizontal splits (unlike vertical splits)
+- This is a known limitation of the VSCode extension API, not this configuration
 
 ### Quick Test
 Verify setup works: `Space + e` (toggle explorer), `Space + p` (quick open), try Vim motions like `dw`, `ci"`
