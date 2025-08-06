@@ -6,7 +6,7 @@ LazyVim-inspired Neovim keybindings for VSCode using the `vscode-neovim` extensi
 
 See the configuration in action:
 
-![VSCode Neovim Configuration Demo](<video src="https://user-images.githubusercontent.com/vscode-config-demo.mp4"></video>)
+![VSCode Neovim Configuration Demo](vscode-config-demo.gif)
 
 ## ⚠️ Backup Your Settings First
 
